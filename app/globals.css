@@ -1,0 +1,262 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/*
+ * ============================================================================
+ *  DESIGN TOKENS
+ *  Single source of truth for colour, radius, shadow, easing and duration.
+ *  Light values live on :root, dark values on .dark (set by next-themes).
+ *  Motion tokens are mirrored in lib/motion.ts for Framer Motion.
+ * ============================================================================
+ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Surfaces */
+  --bg: #fafaf9;
+  --bg-elevated: #ffffff;
+  --card: #ffffff;
+  --card-hover: #fdfdfc;
+  --border: #e7e5e4;
+  --border-strong: #d6d3d1;
+
+  /* Text */
+  --fg: #0f172a;
+  --fg-muted: #475569;
+  --fg-subtle: #64748b;
+
+  /* Accents */
+  --accent-blue: #2563eb;
+  --accent-emerald: #10b981;
+  --accent-emerald-text: #047857; /* AA on light */
+  --accent-amber: #b45309;
+  --ring: #2563eb;
+
+  /* Effects */
+  --card-glow: none;
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px -12px rgb(15 23 42 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(15 23 42 / 0.05), 0 24px 48px -20px rgb(37 99 235 / 0.25);
+  --nav-bg: rgb(250 250 249 / 0.72);
+  --aurora-1: rgb(37 99 235 / 0.16);
+  --aurora-2: rgb(16 185 129 / 0.14);
+  --aurora-3: rgb(147 197 253 / 0.2);
+  --grain-opacity: 0.05;
+  --selection: rgb(37 99 235 / 0.18);
+
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #09090b;
+  --bg-elevated: #0e0e11;
+  --card: #121215;
+  --card-hover: #16161a;
+  --border: #27272a;
+  --border-strong: #3f3f46;
+
+  --fg: #f8fafc;
+  --fg-muted: #a1a1aa;
+  --fg-subtle: #8b8b94;
+
+  --accent-blue: #3b82f6;
+  --accent-emerald: #10b981;
+  --accent-emerald-text: #34d399;
+  --accent-amber: #fbbf24;
+  --ring: #60a5fa;
+
+  --card-glow: inset 0 1px 0 rgb(255 255 255 / 0.04), inset 0 0 40px rgb(59 130 246 / 0.03);
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.02), 0 12px 32px -16px rgb(0 0 0 / 0.6);
+  --shadow-lift: 0 0 0 1px rgb(59 130 246 / 0.25), 0 24px 60px -24px rgb(16 185 129 / 0.35);
+  --nav-bg: rgb(9 9 11 / 0.6);
+  --aurora-1: rgb(37 99 235 / 0.22);
+  --aurora-2: rgb(16 185 129 / 0.16);
+  --aurora-3: rgb(99 102 241 / 0.12);
+  --grain-opacity: 0.06;
+  --selection: rgb(59 130 246 / 0.35);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  /* Typography */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+
+  /* Colours */
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-subtle: var(--fg-subtle);
+  --color-blue: var(--accent-blue);
+  --color-emerald: var(--accent-emerald);
+  --color-emerald-text: var(--accent-emerald-text);
+  --color-amber: var(--accent-amber);
+  --color-ring: var(--ring);
+
+  /* shadcn compat (components/ui) */
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-border: var(--border);
+  --color-muted-foreground: var(--fg-muted);
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  /* Shadows */
+  --shadow-card: var(--shadow-card);
+  --shadow-lift: var(--shadow-lift);
+
+  /* Easing & durations */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 600ms;
+
+  /* Keyframes used by utilities below */
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-shimmer: shimmer 2.6s ease-in-out infinite;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-aurora: aurora 22s ease-in-out infinite alternate;
+
+  @keyframes marquee {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+  @keyframes shimmer {
+    0% { transform: translateX(-120%); }
+    60%, 100% { transform: translateX(120%); }
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  @keyframes aurora {
+    0% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(4%, 3%, 0) scale(1.08); }
+    100% { transform: translate3d(-3%, -2%, 0) scale(0.96); }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    background: var(--bg);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Smooth colour change when the theme flips */
+  body,
+  .theme-transition {
+    transition: background-color var(--duration-base) var(--ease-smooth),
+      color var(--duration-base) var(--ease-smooth);
+  }
+  ::selection {
+    background: var(--selection);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* ---------- Surfaces ---------- */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card), var(--card-glow);
+  transition: border-color var(--duration-base) var(--ease-smooth),
+    background-color var(--duration-base) var(--ease-smooth),
+    box-shadow var(--duration-base) var(--ease-smooth);
+}
+
+.dark .glass {
+  background: rgb(18 18 21 / 0.55);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+.glass {
+  background: rgb(255 255 255 / 0.7);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--border);
+}
+
+/* Blue → emerald accent gradient text */
+.text-gradient {
+  background: linear-gradient(100deg, var(--accent-blue) 10%, var(--accent-emerald) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(120deg, var(--accent-blue), var(--accent-emerald));
+}
+
+/* Fine film grain overlay */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Dotted grid used behind sections */
+.dot-grid {
+  background-image: radial-gradient(var(--border-strong) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.mask-fade-b {
+  mask-image: linear-gradient(to bottom, black 60%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Reduced motion: kill CSS animations globally ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
