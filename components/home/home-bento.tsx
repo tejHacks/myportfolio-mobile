@@ -120,7 +120,7 @@ export function HomeBento() {
         {/* Stats */}
         {[
           { to: 4, suffix: "+", label: "Years building" },
-          { to: shipped, suffix: "", label: "Products shipped & in beta" },
+          { to: shipped, suffix: "", label: "Products built" },
           { to: 12, suffix: "+", label: "Technical articles" },
         ].map((s) => (
           <Cell key={s.label} variants={popIn} className="card rounded-3xl p-6 md:col-span-2 lg:col-span-4">

@@ -6,7 +6,6 @@ import { ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { featuredProjects } from "@/data/projects";
 import { ProjectMockup } from "@/components/projects/project-mockup";
-import { StatusBadge } from "@/components/shared/ui";
 import { cn } from "@/lib/utils";
 
 /** Auto-advancing featured project card (CribDoc, Ankara Blocks, Flow). */
@@ -38,7 +37,6 @@ export function FeaturedCarousel() {
         >
           <div className="relative flex h-52 items-start justify-center overflow-hidden pt-10" style={{ background: `radial-gradient(100% 90% at 50% 0%, ${p.color}40, transparent 70%)` }}>
             <ProjectMockup project={p} className="w-28" />
-            <StatusBadge status={p.status} className="absolute left-4 top-4" />
             <span className="absolute right-4 top-4 font-mono text-[10px] uppercase tracking-widest text-subtle">Featured</span>
           </div>
           <div className="flex flex-1 flex-col p-5">

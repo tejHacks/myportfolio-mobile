@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight, TrendingUp, Trophy } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { TiltCard } from "@/components/motion/tilt-card";
-import { StatusBadge, TechPill } from "@/components/shared/ui";
+import { TechPill } from "@/components/shared/ui";
 import { AppIcon, ProjectMockup } from "./project-mockup";
 import { cn } from "@/lib/utils";
 
@@ -27,7 +27,6 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
         >
           <div className="dot-grid absolute inset-0 opacity-50" aria-hidden />
           <ProjectMockup project={project} className={cn("transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-2", large && "md:w-[52%] md:max-w-[210px]")} />
-          <StatusBadge status={project.status} className="absolute left-4 top-4 backdrop-blur" />
         </div>
 
         {/* Body */}

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { statusLabel, type ProjectStatus } from "@/data/projects";
 
 /** Mono tech pill. */
 export function TechPill({ children, className }: { children: ReactNode; className?: string }) {
@@ -12,20 +11,6 @@ export function TechPill({ children, className }: { children: ReactNode; classNa
   );
 }
 
-const statusStyles: Record<ProjectStatus, string> = {
-  live: "text-emerald-text border-emerald/30 bg-emerald/10",
-  beta: "text-blue border-blue/30 bg-blue/10",
-  "in-development": "text-amber border-amber/30 bg-amber/10",
-};
-
-export function StatusBadge({ status, className }: { status: ProjectStatus; className?: string }) {
-  return (
-    <span className={cn("inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wider", statusStyles[status], className)}>
-      <span className={cn("h-1.5 w-1.5 rounded-full bg-current", status === "live" && "animate-pulse")} />
-      {statusLabel[status]}
-    </span>
-  );
-}
 
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
   return <p className={cn("font-mono text-[11px] uppercase tracking-[0.25em] text-subtle", className)}>{children}</p>;

@@ -2,15 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight, Bell, Check, Download, ExternalLink, Github, Hammer, History, MessageCircle, TrendingUp, Trophy } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, Download, ExternalLink, Github, History, TrendingUp, Trophy } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { Reveal } from "@/components/motion/reveal";
-import { StatusBadge, TechPill, buttonVariants } from "@/components/shared/ui";
+import { TechPill, buttonVariants } from "@/components/shared/ui";
 import { AppIcon, ProjectMockup } from "./project-mockup";
 import { Gallery } from "./gallery";
 import { ProjectCard } from "./project-card";
 import { ease } from "@/lib/motion";
-import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 const linkMeta = {
@@ -38,7 +37,6 @@ export function ProjectDetail({ project, related }: { project: Project; related:
         <motion.div initial="hidden" animate="show" variants={{ show: { transition: { staggerChildren: 0.08 } } }}>
           <motion.div variants={item} className="mb-6 flex flex-wrap items-center gap-3">
             <AppIcon project={project} size={56} />
-            <StatusBadge status={project.status} />
           </motion.div>
           <motion.p variants={item} className="font-mono text-[11px] uppercase tracking-[0.22em] text-subtle">{project.eyebrow}</motion.p>
           <motion.h1 variants={item} className="mt-3 text-5xl font-bold tracking-[-0.04em] md:text-7xl">
@@ -89,7 +87,6 @@ export function ProjectDetail({ project, related }: { project: Project; related:
         </motion.div>
       </div>
 
-      <InProgressBanner project={project} />
 
       {/* Story */}
       <div className="mt-20 grid gap-5 md:grid-cols-3">
@@ -150,42 +147,5 @@ export function ProjectDetail({ project, related }: { project: Project; related:
         </section>
       )}
     </article>
-  );
-}
-
-/** Shown on in-development projects: what's happening and how to follow it. */
-function InProgressBanner({ project }: { project: Project }) {
-  if (project.status !== "in-development") return null;
-  const notify = `mailto:${site.email}?subject=${encodeURIComponent(`Notify me when ${project.name} launches`)}&body=${encodeURIComponent(
-    `Hi Olateju,\n\nPlease let me know when ${project.name} is ready to try.\n\nThanks!`,
-  )}`;
-
-  return (
-    <Reveal className="mt-14">
-      <div className="card relative overflow-hidden rounded-3xl p-6 md:p-8" style={{ borderColor: `${project.color}55` }}>
-        <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full blur-3xl" style={{ background: `${project.color}30` }} />
-        <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-2xl">
-            <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
-              <Hammer className="h-3.5 w-3.5" style={{ color: project.color }} aria-hidden /> In active development
-            </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">{project.name} is being built right now.</h2>
-            <p className="mt-3 leading-relaxed text-muted">
-              {project.links.github
-                ? `It runs today in development builds, and the screenshots here come from it. The source code is on GitHub; a public download is next.`
-                : `It runs today in development builds and is being tested on real devices. The source code and a public download are next.`}
-            </p>
-          </div>
-          <div className="flex shrink-0 flex-col gap-3 sm:flex-row md:flex-col">
-            <a href={notify} className={buttonVariants.primary}>
-              <Bell className="h-4 w-4" /> Get notified
-            </a>
-            <Link href="/contact" className={buttonVariants.secondary}>
-              <MessageCircle className="h-4 w-4" /> Ask about it
-            </Link>
-          </div>
-        </div>
-      </div>
-    </Reveal>
   );
 }
