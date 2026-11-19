@@ -62,7 +62,7 @@ export const experiences: Experience[] = [
   {
     company: "Kairos Initiative",
     role: "Mobile Developer",
-    period: "Mar 2025 — Jan 2026",
+    period: "Oct 2025 — Aug 2026",
     location: "Remote",
     description:
       "Led mobile development for a prayer reminder application built around consistency, offline access, and timely notifications. Worked through the less glamorous parts of mobile engineering — background tasks, state, notifications, and production behaviour.",
@@ -84,7 +84,7 @@ export const experiences: Experience[] = [
   {
     company: "Exodox",
     role: "Frontend & Mobile Developer",
-    period: "Jun 2024 — Feb 2025",
+    period: "Jun 2025 — Mar 2026",
     location: "Remote",
     description:
       "Built and maintained interfaces across web and mobile products. Worked with reusable components, responsive interfaces, performance improvements, and Android delivery.",
