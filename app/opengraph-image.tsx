@@ -22,7 +22,7 @@ export default function OG() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 22, color: "#34D399" }}>
           <div style={{ width: 12, height: 12, borderRadius: 9999, background: "#10B981" }} />
-          {site.availability}
+          Building from {site.location}
         </div>
       </div>
     ),

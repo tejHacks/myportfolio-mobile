@@ -12,7 +12,7 @@ import { projects } from "@/data/projects";
 import { Aurora } from "@/components/site/aurora";
 import { Magnetic } from "@/components/motion/magnetic";
 import { Counter } from "@/components/motion/counter";
-import { AvailabilityBadge, buttonVariants } from "@/components/shared/ui";
+import { buttonVariants } from "@/components/shared/ui";
 import { popIn, stagger } from "@/lib/motion";
 import { GreetingRotator } from "./greeting-rotator";
 import { TerminalCard } from "./terminal-card";
@@ -63,14 +63,11 @@ export function HomeBento() {
           </div>
         </Cell>
 
-        {/* Profile + availability */}
-        <Cell variants={popIn} className="card relative min-h-[260px] overflow-hidden rounded-3xl md:col-span-3 lg:col-span-4">
-          <Image src="/profile-photo.jpeg" alt={site.name} fill priority sizes="(min-width:1024px) 380px, 100vw" className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 space-y-3 p-5">
-            <AvailabilityBadge text={site.availability} className="border-emerald/40 bg-black/40 text-emerald-300 backdrop-blur" />
-            <p className="flex items-center gap-1.5 text-xs text-white/80"><MapPin className="h-3.5 w-3.5" /> Building from {site.location}</p>
-          </div>
+        {/* Profile */}
+        <Cell variants={popIn} className="card relative aspect-[4/5] overflow-hidden rounded-3xl md:col-span-3 md:aspect-auto md:min-h-[380px] lg:col-span-4">
+          <Image src="/profile-photo.jpeg" alt={site.name} fill priority sizes="(min-width:1024px) 380px, 100vw" className="object-cover object-[50%_55%]" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
+          <p className="absolute bottom-5 left-5 flex items-center gap-1.5 text-xs text-white/90"><MapPin className="h-3.5 w-3.5" /> Building from {site.location}</p>
         </Cell>
 
         {/* Terminal */}

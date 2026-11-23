@@ -406,19 +406,20 @@ export const projects: Project[] = [
     eyebrow: "SwiftUI · WidgetKit · iOS",
     tagline: "A psalm for today, on your Home and Lock Screen.",
     overview:
-      "My first native iOS app. One verse from the Psalms each day (the same on every screen and in every widget, changing at midnight), browse by theme, save and share. Small and Lock Screen widgets keep the day's verse in view.",
+      "My first native iOS app. All 150 Psalms (King James Version) in a clean reader, with one verse each day that is the same on every screen and in every widget and changes at midnight. Search any psalm, browse by theme, save any verse and share it. Small and Lock Screen widgets keep the day's verse in view, and 10 colour themes let you make it yours.",
     problem:
-      "Scripture apps are often heavy. Sometimes you just want one verse for the day, right where you look most: your Home and Lock Screen.",
+      "Scripture apps are often heavy. Sometimes you just want one verse for the day, right where you look most: your Home and Lock Screen. And when you want more, the whole book of Psalms should be one tap away.",
     solution:
-      "SwiftUI with the Observation framework, a WidgetKit extension with small, medium and Lock Screen families, and a shared verse library so the app and widget always agree without needing App Groups. The Xcode project is generated with XcodeGen and covered by XCTest.",
+      "SwiftUI with the Observation framework, a WidgetKit extension with small, medium and Lock Screen families, and a shared library of all 150 Psalms (2,461 verses) so the app and widget always agree. Ten colour palettes are passed through the SwiftUI environment, and a test checks every one meets WCAG AA contrast. The Xcode project is generated with XcodeGen and covered by XCTest.",
     features: [
-      "Verse of the day from 40 KJV Psalms, refreshing at midnight",
+      "All 150 Psalms in a searchable reader",
+      "Verse of the day, refreshing at midnight",
       "Home Screen and Lock Screen widgets",
+      "10 colour themes, each tested for WCAG AA contrast in light and dark mode",
       "Browse by theme: peace, strength, trust, praise, morning, rest",
-      "Save and share verses",
-      "Accessible colours in light and dark mode (WCAG AA)",
+      "Save any verse and share it",
       "3-page onboarding",
-      "6 XCTest tests",
+      "12 XCTest tests",
     ],
     tech: ["Swift", "SwiftUI", "WidgetKit", "XcodeGen", "XCTest"],
     categories: ["mobile", "faith"],

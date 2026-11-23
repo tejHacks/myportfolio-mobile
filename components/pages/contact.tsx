@@ -6,7 +6,7 @@ import { useState, type FormEvent } from "react";
 import { PageHeader } from "@/components/shared/page-header";
 import { Reveal } from "@/components/motion/reveal";
 import { Magnetic } from "@/components/motion/magnetic";
-import { AvailabilityBadge, buttonVariants } from "@/components/shared/ui";
+import { buttonVariants } from "@/components/shared/ui";
 import { site, socials } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -80,7 +80,6 @@ export function ContactPage() {
         intro={
           <>
             <p>Have an idea, a product to build, or an interesting problem worth solving? I&apos;m always open to conversations around mobile development, software engineering, and new products.</p>
-            <AvailabilityBadge text={site.availability} className="mt-6" />
           </>
         }
       />
@@ -154,7 +153,7 @@ export function ContactPage() {
               <BriefcaseBusiness className="mt-0.5 h-5 w-5 text-emerald-text" />
               <div>
                 <p className="text-sm font-semibold">Currently available</p>
-                <p className="mt-1 text-sm text-muted">Open to freelance projects, full-time roles, collaborations, and interesting technical opportunities.</p>
+                <p className="mt-1 text-sm text-muted">Open to new projects, collaborations and interesting technical problems.</p>
               </div>
             </div>
           </motion.div>

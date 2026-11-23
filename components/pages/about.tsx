@@ -55,8 +55,8 @@ export function AboutPage() {
           animate={{ opacity: 1, scale: 1, rotate: 0, transition: { duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] } }}
           className="relative mx-auto mb-14 aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2rem] border border-line md:mb-20"
         >
-          <Image src="/profile-photo.jpeg" alt={site.name} fill sizes="380px" className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          <Image src="/profile-photo.jpeg" alt={site.name} fill sizes="380px" className="object-cover object-[50%_55%]" priority />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
           <p className="absolute bottom-5 left-5 flex items-center gap-2 text-xs text-white/85">
             <span className="h-2 w-2 animate-pulse rounded-full bg-emerald" /> Building from {site.location}
           </p>

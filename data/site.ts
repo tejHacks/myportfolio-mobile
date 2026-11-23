@@ -11,7 +11,6 @@ export const site = {
   statement: "I build things that move from idea to reality.",
   subStatement:
     "Mobile products, intelligent systems, and software built with curiosity, discipline, and an unreasonable willingness to figure things out.",
-  availability: "Available for full-time, remote & freelance projects",
   location: "Ibadan, Nigeria",
   email: "olateju202@gmail.com",
   phone: "+234 808 697 6247",
