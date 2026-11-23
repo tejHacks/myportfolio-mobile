@@ -107,7 +107,7 @@ export const projects: Project[] = [
       "/projects/cribdoc/screen-5-babies.png",
       "/projects/cribdoc/screen-6-team.png",
     ],
-    links: { github: "https://github.com/tejHacks/cribdoc-mobile" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/cribdoc-v1.0.0/CribDoc-1.0.0.apk", github: "https://github.com/tejHacks/cribdoc-mobile" },
     featured: true,
     size: "large",
     competitions: [{ name: "USPF Changemaker" }, { name: "GenHacks (Devpost)" }],
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     eyebrow: "Mobile · Health · Emergency First Aid",
     tagline: "Know what to do in an emergency, wherever you are.",
     overview:
-      "AidNow is an offline-first first-aid companion for the moments when someone collapses, seizes, chokes or bleeds and you need to act. It gives calm, step-by-step guidance for common emergencies — epilepsy and seizures, fainting, choking, CPR, severe bleeding, burns, allergic reactions, asthma attacks, stroke, heat stroke, low blood sugar and more — with one tap to call the right emergency number for the country you're in.",
+      "AidNow is an offline-first first-aid companion for the moments when someone collapses, seizes, chokes or bleeds and you need to act. It gives calm, step-by-step guidance for common emergencies — epilepsy and seizures, fainting, choking, CPR, severe bleeding, burns, allergic reactions, asthma attacks, stroke, heat stroke, low blood sugar and more — with one tap to call the right emergency number for the country you're in. Not medical advice: AidNow gives general first-aid guidance, is not a substitute for professional care, and its content is awaiting clinician review. In an emergency, always call your local emergency number first.",
     problem:
       "In an emergency most people freeze. First-aid knowledge is scattered, rarely remembered, and often unavailable when there's no signal. Seconds matter, and the right first steps can make a real difference.",
     solution:
@@ -184,7 +184,7 @@ export const projects: Project[] = [
       "/projects/aidnow/screen-3-seizure.png",
       "/projects/aidnow/screen-4-cpr.png",
     ],
-    links: { github: "https://github.com/tejHacks/aidnow-mobile" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/aidnow-v1.0.0/AidNow-1.0.0.apk", github: "https://github.com/tejHacks/aidnow-mobile" },
   },
   {
     slug: "flow",
@@ -215,7 +215,7 @@ export const projects: Project[] = [
       "/projects/flow/screen-3-onboarding.png",
       "/projects/flow/screen-4-onboarding-focus.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/flow-v1.0.0/Flow-1.0.0.apk" },
     featured: true,
   },
   {
@@ -251,7 +251,7 @@ export const projects: Project[] = [
       "/projects/ankara-blocks/screen-5-game-L44.png",
       "/projects/ankara-blocks/screen-6-howto-levels.png",
     ],
-    links: { github: "https://github.com/tejHacks/ankara-blocks-mobile" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/ankara-blocks-v1.0.0/AnkaraBlocks-1.0.0.apk", github: "https://github.com/tejHacks/ankara-blocks-mobile" },
     featured: true,
   },
   {
@@ -286,7 +286,7 @@ export const projects: Project[] = [
       "/projects/ayo-arena/screen-3-hint.png",
       "/projects/ayo-arena/screen-4-how-to-play.png",
     ],
-    links: { github: "https://github.com/tejHacks/ayo-arena-mobile" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/ayo-arena-v1.0.0/AyoArena-1.0.0.apk", github: "https://github.com/tejHacks/ayo-arena-mobile" },
   },
 
   {
@@ -322,7 +322,7 @@ export const projects: Project[] = [
       "/projects/periodica/screen-5-element.png",
       "/projects/periodica/screen-6-onboarding.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/periodica-v1.0.0/Periodica-1.0.0.apk" },
   },
   {
     slug: "shelldeck",
@@ -363,7 +363,7 @@ export const projects: Project[] = [
       "/projects/shelldeck/screen-8-zsh.png",
       "/projects/shelldeck/screen-9-light.png",
     ],
-    links: { github: "https://github.com/tejHacks/shelldeck" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/shelldeck-v1.0.0/ShellDeck-1.0.0.apk", github: "https://github.com/tejHacks/shelldeck" },
   },
   {
     slug: "kudi",
@@ -398,7 +398,7 @@ export const projects: Project[] = [
       "/projects/kudi/screen-5-add.png",
       "/projects/kudi/screen-6-onboarding.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/kudi-v1.0.0/Kudi-1.0.0.apk" },
   },
   {
     slug: "psalm",
@@ -779,7 +779,7 @@ export const projects: Project[] = [
       "/projects/beatpd/screen-3-intro.png",
       "/projects/beatpd/screen-4-intro-loop.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/beatpd-v1.0.0/Beatpd-1.0.0.apk" },
   },
   {
     slug: "howmarket",
@@ -811,7 +811,7 @@ export const projects: Project[] = [
       "/projects/howmarket/screen-3-add-price.png",
       "/projects/howmarket/screen-4-login.png",
     ],
-    links: { github: "https://github.com/tejHacks/howmarket-mobile" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/howmarket-v1.0.0/HowMarket-1.0.0.apk", github: "https://github.com/tejHacks/howmarket-mobile" },
   },
   {
     slug: "mocho",
@@ -843,7 +843,7 @@ export const projects: Project[] = [
       "/projects/mocho/screen-3-empty.png",
       "/projects/mocho/screen-4-onboarding.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/mocho-v1.0.0/Mocho-1.0.0.apk" },
   },
   {
     slug: "ajo",
@@ -875,7 +875,7 @@ export const projects: Project[] = [
       "/projects/ajo/screen-3-new-group.png",
       "/projects/ajo/screen-4-onboarding.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/ajo-v1.0.0/Ajo-1.0.0.apk" },
   },
   {
     slug: "selah",
@@ -907,7 +907,7 @@ export const projects: Project[] = [
       "/projects/selah/screen-3-onboarding.png",
       "/projects/selah/screen-4-onboarding-reminders.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/selah-v1.0.0/Selah-1.0.0.apk" },
   },
   {
     slug: "cribnest",
@@ -944,7 +944,7 @@ export const projects: Project[] = [
       "/projects/cribnest/screen-6-care.png",
       "/projects/cribnest/screen-7-kicks.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/cribnest-v1.0.0/CribNest-1.0.0.apk" },
   },
   {
     slug: "dogwalk",
@@ -982,7 +982,7 @@ export const projects: Project[] = [
       "/projects/dogwalk/screen-7-live-walk.png",
       "/projects/dogwalk/screen-8-walker-today.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/dogwalk-v1.0.0/DogWalk-1.0.0.apk" },
   },
   {
     slug: "watch-face",
@@ -1014,7 +1014,7 @@ export const projects: Project[] = [
       "/projects/watch-face/screen-3-digital.png",
       "/projects/watch-face/screen-4-onboarding.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/watch-face-v1.0.0/WatchFace-1.0.0.apk" },
   },
   {
     slug: "pawfit",
@@ -1046,7 +1046,7 @@ export const projects: Project[] = [
       "/projects/pawfit/screen-3-add-pet.png",
       "/projects/pawfit/screen-4-onboarding.png",
     ],
-    links: {},
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/pawfit-v1.0.0/PawFit-1.0.0.apk" },
   },
 ];
 
@@ -1059,21 +1059,25 @@ export const featuredProjects = ["cribdoc", "ankara-blocks", "flow"]
   .map((slug) => getProject(slug))
   .filter((p): p is Project => Boolean(p));
 
-export function filterProjects(filter: (typeof filters)[number]["id"]) {
-  if (filter === "all") return projects;
-  return projects.filter((p) => p.categories.includes(filter));
-}
+/** Top of the Projects page: the strongest three. */
+export const spotlightSlugs = ["cribdoc", "ankara-blocks", "aidnow"];
 
-/** How the "All" view is grouped, after the featured three. Archived work is folded at the end. */
+/** How the "All" view is grouped, after the spotlight: best work first, smaller builds after. Archived work is folded at the end. */
 export const sections: { eyebrow: string; title: string; slugs: string[] }[] = [
-  { eyebrow: "Health & care", title: "Apps that look after people", slugs: ["aidnow", "lumicare", "cribnest", "pawfit"] },
-  { eyebrow: "Games & music", title: "Made to play", slugs: ["periodica", "ayo-arena", "beatpd"] },
-  { eyebrow: "Faith", title: "Prayer, scripture and reflection", slugs: ["kairos", "hagah", "psalm", "scribe", "selah"] },
-  { eyebrow: "Everyday tools", title: "Useful every day", slugs: ["shelldeck", "howmarket", "kudi", "ajo", "mocho", "dogwalk", "watch-face"] },
+  { eyebrow: "Best work", title: "Polished, tested and ready to use", slugs: ["periodica", "flow", "shelldeck", "psalm", "mocho", "selah", "kudi", "kairos", "lumicare"] },
+  { eyebrow: "More apps", title: "Smaller builds and experiments", slugs: ["ayo-arena", "beatpd", "howmarket", "ajo", "cribnest", "dogwalk", "watch-face", "pawfit", "hagah", "scribe"] },
 ];
 
-/** Top of the Projects page — the strongest three. */
-export const spotlightSlugs = ["cribdoc", "ankara-blocks", "flow"];
+const rankOrder = [...spotlightSlugs, ...sections.flatMap((s) => s.slugs)];
+const rank = (p: Project) => {
+  const i = rankOrder.indexOf(p.slug);
+  return i === -1 ? rankOrder.length + (p.archived ? 1 : 0) : i;
+};
+
+export function filterProjects(filter: (typeof filters)[number]["id"]) {
+  const list = filter === "all" ? projects : projects.filter((p) => p.categories.includes(filter));
+  return [...list].sort((x, y) => rank(x) - rank(y));
+}
 
 /** Projects that list a given technology — used for "shipped with this" hints. */
 export function projectsUsing(tech: string) {
