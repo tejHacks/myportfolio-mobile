@@ -325,6 +325,47 @@ export const projects: Project[] = [
     links: {},
   },
   {
+    slug: "shelldeck",
+    name: "ShellDeck",
+    eyebrow: "React Native · Developer tool",
+    tagline: "Every Linux and shell command you keep forgetting, offline and instant.",
+    overview:
+      "A fast, offline command cheatsheet for Linux, bash, zsh, fish and csh. It has 476 commands and 840 copy-ready examples, with instant search, shell filters and a Compare tab that shows how each shell does the same job. It uses a dark terminal theme by default, with a light mode.",
+    problem:
+      "I kept going back to the same commands: tar flags, find, chmod, and how to set PATH in fish instead of bash. Man pages are long and web searches need a connection. I wanted one place on my phone that answers \"how do I do this in my shell?\" in a second. Building it was also how I went deep on React Native and Expo performance.",
+    solution:
+      "Commands live in a compact plain-text format, one sheet per shell, and are parsed once at startup into objects with pre-lowercased search fields. Search is a single ranked scan: name matches score above description matches. The list uses fixed-height rows, memoised rows and useDeferredValue, so typing stays smooth. Loading and indexing everything takes about 1 ms, and an average search takes 0.075 ms. A speed test in the app lets anyone check this on their own phone.",
+    features: [
+      "476 commands and 840 copy-ready examples across Linux, bash, zsh, fish and csh",
+      "Instant ranked search: \"disk space\" finds df and du",
+      "Filter by shell and category",
+      "Copy any example with one tap",
+      "Warnings on commands that can delete data (rm -rf, dd, mkfs)",
+      "Compare tab: 34 everyday tasks in four shells",
+      "Saved and recent commands, fully offline",
+      "Dark terminal theme with light mode",
+      "19 tests: data checks, search speed and app flows",
+    ],
+    tech: ["React Native", "Expo SDK 58", "TypeScript", "Expo Router", "AsyncStorage", "Jest"],
+    categories: ["mobile", "education"],
+    status: "live",
+    icon: "/projects/shelldeck/icon.png",
+    color: "#4ADE80",
+    colorTo: "#0B0E11",
+    screenshots: [
+      "/projects/shelldeck/screen-1-commands.png",
+      "/projects/shelldeck/screen-2-search.png",
+      "/projects/shelldeck/screen-3-command.png",
+      "/projects/shelldeck/screen-4-careful.png",
+      "/projects/shelldeck/screen-5-fish.png",
+      "/projects/shelldeck/screen-6-compare.png",
+      "/projects/shelldeck/screen-7-speed.png",
+      "/projects/shelldeck/screen-8-zsh.png",
+      "/projects/shelldeck/screen-9-light.png",
+    ],
+    links: { github: "https://github.com/tejHacks/shelldeck" },
+  },
+  {
     slug: "kudi",
     name: "Kudi",
     eyebrow: "Flutter · Personal finance",
@@ -1027,7 +1068,7 @@ export const sections: { eyebrow: string; title: string; slugs: string[] }[] = [
   { eyebrow: "Health & care", title: "Apps that look after people", slugs: ["aidnow", "lumicare", "cribnest", "pawfit"] },
   { eyebrow: "Games & music", title: "Made to play", slugs: ["periodica", "ayo-arena", "beatpd"] },
   { eyebrow: "Faith", title: "Prayer, scripture and reflection", slugs: ["kairos", "hagah", "psalm", "scribe", "selah"] },
-  { eyebrow: "Everyday tools", title: "Useful every day", slugs: ["howmarket", "kudi", "ajo", "mocho", "dogwalk", "watch-face"] },
+  { eyebrow: "Everyday tools", title: "Useful every day", slugs: ["shelldeck", "howmarket", "kudi", "ajo", "mocho", "dogwalk", "watch-face"] },
 ];
 
 /** Top of the Projects page — the strongest three. */
