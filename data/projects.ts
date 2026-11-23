@@ -482,19 +482,19 @@ export const projects: Project[] = [
     tagline:
       "A prayer companion built to help believers turn good intentions into consistent spiritual practice.",
     overview:
-      "Kairos is a spiritual companion for believers who want to build a deeper rhythm of prayer, fasting, Scripture meditation, and reflection. It brings several disciplines into one focused experience: structured prayer plans, customizable prayer reminders, fasting plans, a prayer journal, testimonies, and a Prayer Pad where important prayer points can be pinned and revisited.",
+      "Kairos (Greek for \"the appointed time\") reminds you to pray and helps you keep a rhythm of prayer, fasting and Scripture. Set your prayer hours and Kairos reminds you each day with a verse on prayer. It also has a timed prayer altar, seven kinds of fast, a prayer journal and daily KJV verses and psalms. Used by 100+ people.",
     problem:
       "Prayer can easily become something we intend to do rather than something we consistently practice. Kairos turns spiritual disciplines into simple, repeatable routines without making the experience feel mechanical.",
     solution:
       "Prayer plans ranging from short 5-minute sessions to longer guided sessions, customizable prayer schedules, fasting plans, journaling, testimonies, pinned prayer points, offline Scripture, meditation content, and notification-driven routines.",
     features: [
-      "Prayer plans ranging from short 5-minute sessions to longer guided sessions",
-      "Customizable prayer schedules",
-      "Fasting plans",
-      "Journaling and testimonies",
-      "Pinned prayer points",
-      "Offline Scripture and meditation content",
-      "Notification-driven routines",
+      "Daily prayer reminders at the hours you choose, each with a KJV verse",
+      "Timed prayer sessions at the altar",
+      "Seven kinds of fast with reminders",
+      "Prayer journal",
+      "Verse of the day, today's psalm and themes, all in the KJV",
+      "Light and dark mode, following your phone",
+      "18 tests, including reminder scheduling",
     ],
     tech: ["React Native", "Expo", "TypeScript", "SQLite", "Push Notifications", "AsyncStorage", "Prayer Plans", "Fasting", "Journaling"],
     categories: ["mobile", "faith"],
@@ -521,18 +521,19 @@ export const projects: Project[] = [
     tagline:
       "A Scripture declaration and meditation app built around speaking, studying, and remembering God's Word.",
     overview:
-      "Hagah is built around the idea of meditating on God's Word deeply enough for it to become part of everyday thinking. Users can explore Scripture-backed declarations, study words using the KJV and Strong's Concordance, save important declarations, share beautifully formatted cards, and schedule reminders for morning, afternoon, and night.",
+      "Hagah (Hebrew for \"to meditate\", Joshua 1:8) helps you keep the Word in your mouth day and night. Each day brings a scripture and a declaration that Hagah reads aloud. The full King James Bible has Strong's word study and a Listen button that reads any chapter to you. Declare the Word offers 63 first-person KJV verses to speak as written, and a daily streak keeps the habit going. Live on Google Play.",
     problem:
       "Reading Scripture once is easy. Returning to it, speaking it, studying it, and carrying it through the day is harder. Hagah creates a practical rhythm around repeated meditation.",
     solution:
-      "Scripture declarations, KJV word study with Strong's references, pinned declarations, shareable cards, scheduled reminders, meditation content, and a focused reading experience.",
+      "React Native and Expo with an on-device SQLite Bible (31,102 verses with Strong's numbers and full-text search). Version 1.1 repaired 3,465 verses that had lost their last words, replaced paraphrased scripture with exact KJV text pulled from the database by a script, added text-to-speech for whole chapters, a streak system and a calm light and dark design.",
     features: [
-      "Scripture declarations",
-      "KJV word study with Strong's references",
-      "Pinned declarations",
-      "Shareable cards",
-      "Scheduled reminders for morning, afternoon, and night",
-      "Meditation content and a focused reading experience",
+      "Daily scripture and declaration, read aloud five times",
+      "Full KJV Bible with Strong's Hebrew and Greek word study",
+      "Listen: any chapter read aloud, verse by verse",
+      "Declare the Word: 63 first-person KJV verses by theme",
+      "Daily streak for meditating, declaring and reading",
+      "Pins, shareable cards and morning, afternoon and night reminders",
+      "Light and dark mode, 19 tests",
     ],
     tech: ["React Native", "Expo", "TypeScript", "Strong's Concordance", "KJV", "Text-to-Speech", "Push Notifications", "Sharing"],
     categories: ["mobile", "faith"],
