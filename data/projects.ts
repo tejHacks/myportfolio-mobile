@@ -54,8 +54,9 @@ export interface Project {
   origins?: string;
 }
 
-export const filters: { id: "all" | ProjectCategory; label: string }[] = [
+export const filters: { id: "all" | "react-native" | ProjectCategory; label: string }[] = [
   { id: "all", label: "All" },
+  { id: "react-native", label: "React Native" },
   { id: "mobile", label: "Mobile Apps" },
   { id: "ai", label: "AI / HealthTech" },
   { id: "games", label: "Games" },
@@ -364,6 +365,42 @@ export const projects: Project[] = [
       "/projects/shelldeck/screen-9-light.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/shelldeck-v1.0.0/ShellDeck-1.0.0.apk", github: "https://github.com/tejHacks/shelldeck" },
+  },
+  {
+    slug: "swiftlab",
+    name: "SwiftLab",
+    eyebrow: "Flutter · Education · Developer tool",
+    tagline: "Learn Swift 6 from zero to advanced, then get interview-ready, offline.",
+    overview:
+      "A course in your pocket: 41 Swift 6 lessons in 8 modules, from variables to actors, macros and SwiftData, each with highlighted code and an end-of-lesson quiz. An interview section has 62 questions with model answers and a flashcard drill. Everything works offline.",
+    problem:
+      "I was relearning Swift and wanted one place to learn it properly and prepare for interviews, on my phone, without video courses or a connection.",
+    solution:
+      "A Flutter app with lessons stored as structured content in the app bundle, a syntax highlighter for Swift, a quiz engine with 88 questions, and an interview bank you can filter by level and topic, search, and drill as flashcards. Progress is saved on the device. Light and dark themes.",
+    features: [
+      "41 lessons in 8 modules, about 5½ hours of reading",
+      "Highlighted Swift code in every lesson",
+      "88 quiz questions and quick quizzes",
+      "62 interview questions with model answers",
+      "Flashcard drill: answer out loud, reveal, score yourself",
+      "Search, progress tracking, light and dark mode",
+      "Fully offline",
+    ],
+    tech: ["Flutter", "Dart", "shared_preferences"],
+    categories: ["mobile", "education"],
+    status: "live",
+    icon: "/projects/swiftlab/icon.png",
+    color: "#F05138",
+    colorTo: "#F7A23B",
+    screenshots: [
+      "/projects/swiftlab/screen-1-learn.png",
+      "/projects/swiftlab/screen-2-lesson.png",
+      "/projects/swiftlab/screen-3-quiz.png",
+      "/projects/swiftlab/screen-4-interview.png",
+      "/projects/swiftlab/screen-5-flashcard.png",
+      "/projects/swiftlab/screen-6-lesson-dark.png",
+    ],
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/swiftlab-v1.0.0/SwiftLab-1.0.0.apk", github: "https://github.com/tejHacks/swfit-lab" },
   },
   {
     slug: "kudi",
@@ -1063,10 +1100,10 @@ export const featuredProjects = ["hagah", "kairos", "cribdoc", "aidnow", "ankara
 export const spotlightSlugs = ["hagah", "kairos", "cribdoc"];
 
 /** How the "All" view is grouped, after the spotlight: best work first, smaller builds after. Archived work is folded at the end. */
-export const sections: { eyebrow: string; title: string; slugs: string[] }[] = [
-  { eyebrow: "High impact", title: "Health, safety and culture", slugs: ["aidnow", "ankara-blocks", "lumicare", "periodica"] },
-  { eyebrow: "Best work", title: "Polished, tested and ready to use", slugs: ["flow", "shelldeck", "psalm", "selah", "mocho", "kudi", "scribe"] },
-  { eyebrow: "More apps", title: "Smaller builds and experiments", slugs: ["ayo-arena", "beatpd", "howmarket", "ajo", "cribnest", "dogwalk", "watch-face", "pawfit"] },
+export const sections: { eyebrow: string; title: string; slugs: string[]; compact?: boolean }[] = [
+  { eyebrow: "React Native", title: "Products that solve real problems", slugs: ["aidnow", "lumicare", "ankara-blocks", "periodica", "flow", "shelldeck"] },
+  { eyebrow: "Beyond React Native", title: "Native iOS and Flutter", slugs: ["psalm", "swiftlab", "selah", "mocho", "kudi", "ajo"] },
+  { eyebrow: "More builds", title: "Smaller apps and experiments", compact: true, slugs: ["scribe", "dogwalk", "howmarket", "cribnest", "ayo-arena", "beatpd", "pawfit", "watch-face"] },
 ];
 
 const rankOrder = [...spotlightSlugs, ...sections.flatMap((s) => s.slugs)];
@@ -1076,7 +1113,12 @@ const rank = (p: Project) => {
 };
 
 export function filterProjects(filter: (typeof filters)[number]["id"]) {
-  const list = filter === "all" ? projects : projects.filter((p) => p.categories.includes(filter));
+  const list =
+    filter === "all"
+      ? projects
+      : filter === "react-native"
+        ? projects.filter((p) => !p.archived && p.tech.some((t) => /react native/i.test(t)))
+        : projects.filter((p) => p.categories.includes(filter));
   return [...list].sort((x, y) => rank(x) - rank(y));
 }
 

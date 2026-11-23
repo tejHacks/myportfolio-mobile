@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { filterProjects, filters, projects, sections, spotlightSlugs, type Project } from "@/data/projects";
 import { ProjectCard } from "./project-card";
+import { CompactCard } from "./compact-card";
 import { cn } from "@/lib/utils";
 
 type FilterId = (typeof filters)[number]["id"];
@@ -34,6 +35,17 @@ function Grid({ list, allowLarge = false }: { list: Project[]; allowLarge?: bool
   );
 }
 
+/** Four-up grid of small tiles for secondary work. */
+function CompactGrid({ list }: { list: Project[] }) {
+  return (
+    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {list.map((p) => (
+        <CompactCard key={p.slug} project={p} />
+      ))}
+    </div>
+  );
+}
+
 function Section({ eyebrow, title, children }: { eyebrow: string; title: string; children: ReactNode }) {
   return (
     <section className="mt-16 first:mt-0">
@@ -45,8 +57,9 @@ function Section({ eyebrow, title, children }: { eyebrow: string; title: string;
 }
 
 /**
- * Animated category tabs. "All" is curated for skimmers: the three strongest
- * projects first, then one section per kind of work, with older work folded.
+ * Animated category tabs. "All" is curated for skimmers: live apps with real
+ * users first, then React Native products, then Swift and Flutter, then smaller
+ * builds as compact tiles, with older work folded.
  */
 export function ProjectsExplorer() {
   const [active, setActive] = useState<FilterId>("all");
@@ -102,13 +115,13 @@ export function ProjectsExplorer() {
 
           {sections.map((s) => (
             <Section key={s.eyebrow} eyebrow={s.eyebrow} title={s.title}>
-              <Grid list={bySlug(s.slugs)} />
+              {s.compact ? <CompactGrid list={bySlug(s.slugs)} /> : <Grid list={bySlug(s.slugs)} />}
             </Section>
           ))}
 
           {unplaced.length > 0 && (
             <Section eyebrow="More" title="Other projects">
-              <Grid list={unplaced} />
+              <CompactGrid list={unplaced} />
             </Section>
           )}
 
