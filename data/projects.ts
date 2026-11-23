@@ -215,7 +215,7 @@ export const projects: Project[] = [
       "/projects/flow/screen-3-onboarding.png",
       "/projects/flow/screen-4-onboarding-focus.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/flow-v1.0.0/Flow-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/flow-v1.0.0/Flow-1.0.0.apk", github: "https://github.com/tejHacks/flow" },
     featured: true,
   },
   {
@@ -322,7 +322,7 @@ export const projects: Project[] = [
       "/projects/periodica/screen-5-element.png",
       "/projects/periodica/screen-6-onboarding.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/periodica-v1.0.0/Periodica-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/periodica-v1.0.0/Periodica-1.0.0.apk", github: "https://github.com/tejHacks/periodica" },
   },
   {
     slug: "shelldeck",
@@ -398,7 +398,7 @@ export const projects: Project[] = [
       "/projects/kudi/screen-5-add.png",
       "/projects/kudi/screen-6-onboarding.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/kudi-v1.0.0/Kudi-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/kudi-v1.0.0/Kudi-1.0.0.apk", github: "https://github.com/tejHacks/kudi" },
   },
   {
     slug: "psalm",
@@ -434,7 +434,7 @@ export const projects: Project[] = [
       "/projects/psalm/screen-4-today-dark.png",
       "/projects/psalm/screen-5-onboarding.png",
     ],
-    links: {},
+    links: { github: "https://github.com/tejHacks/psalm" },
   },
 
   /* ------------------------------------------------------------- EXISTING */
@@ -779,7 +779,7 @@ export const projects: Project[] = [
       "/projects/beatpd/screen-3-intro.png",
       "/projects/beatpd/screen-4-intro-loop.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/beatpd-v1.0.0/Beatpd-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/beatpd-v1.0.0/Beatpd-1.0.0.apk", github: "https://github.com/tejHacks/beatproducer" },
   },
   {
     slug: "howmarket",
@@ -843,7 +843,7 @@ export const projects: Project[] = [
       "/projects/mocho/screen-3-empty.png",
       "/projects/mocho/screen-4-onboarding.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/mocho-v1.0.0/Mocho-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/mocho-v1.0.0/Mocho-1.0.0.apk", github: "https://github.com/tejHacks/mocho-music-player" },
   },
   {
     slug: "ajo",
@@ -875,7 +875,7 @@ export const projects: Project[] = [
       "/projects/ajo/screen-3-new-group.png",
       "/projects/ajo/screen-4-onboarding.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/ajo-v1.0.0/Ajo-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/ajo-v1.0.0/Ajo-1.0.0.apk", github: "https://github.com/tejHacks/ajo-app" },
   },
   {
     slug: "selah",
@@ -907,7 +907,7 @@ export const projects: Project[] = [
       "/projects/selah/screen-3-onboarding.png",
       "/projects/selah/screen-4-onboarding-reminders.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/selah-v1.0.0/Selah-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/selah-v1.0.0/Selah-1.0.0.apk", github: "https://github.com/tejHacks/selah" },
   },
   {
     slug: "cribnest",
@@ -944,7 +944,7 @@ export const projects: Project[] = [
       "/projects/cribnest/screen-6-care.png",
       "/projects/cribnest/screen-7-kicks.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/cribnest-v1.0.0/CribNest-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/cribnest-v1.0.0/CribNest-1.0.0.apk", github: "https://github.com/tejHacks/cribnest" },
   },
   {
     slug: "dogwalk",
@@ -982,7 +982,7 @@ export const projects: Project[] = [
       "/projects/dogwalk/screen-7-live-walk.png",
       "/projects/dogwalk/screen-8-walker-today.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/dogwalk-v1.0.0/DogWalk-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/dogwalk-v1.0.0/DogWalk-1.0.0.apk", github: "https://github.com/tejHacks/dogwalk" },
   },
   {
     slug: "watch-face",
@@ -1014,7 +1014,7 @@ export const projects: Project[] = [
       "/projects/watch-face/screen-3-digital.png",
       "/projects/watch-face/screen-4-onboarding.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/watch-face-v1.0.0/WatchFace-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/watch-face-v1.0.0/WatchFace-1.0.0.apk", github: "https://github.com/tejHacks/watch-face" },
   },
   {
     slug: "pawfit",
@@ -1046,7 +1046,7 @@ export const projects: Project[] = [
       "/projects/pawfit/screen-3-add-pet.png",
       "/projects/pawfit/screen-4-onboarding.png",
     ],
-    links: { apk: "https://github.com/tejHacks/apps/releases/download/pawfit-v1.0.0/PawFit-1.0.0.apk" },
+    links: { apk: "https://github.com/tejHacks/apps/releases/download/pawfit-v1.0.0/PawFit-1.0.0.apk", github: "https://github.com/tejHacks/pawfit-mobile-app" },
   },
 ];
 
@@ -1055,17 +1055,18 @@ export const projects: Project[] = [
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 
 /** Home-page carousel. */
-export const featuredProjects = ["cribdoc", "ankara-blocks", "flow"]
+export const featuredProjects = ["hagah", "kairos", "cribdoc", "aidnow", "ankara-blocks"]
   .map((slug) => getProject(slug))
   .filter((p): p is Project => Boolean(p));
 
 /** Top of the Projects page: the strongest three. */
-export const spotlightSlugs = ["cribdoc", "ankara-blocks", "aidnow"];
+export const spotlightSlugs = ["hagah", "kairos", "cribdoc"];
 
 /** How the "All" view is grouped, after the spotlight: best work first, smaller builds after. Archived work is folded at the end. */
 export const sections: { eyebrow: string; title: string; slugs: string[] }[] = [
-  { eyebrow: "Best work", title: "Polished, tested and ready to use", slugs: ["periodica", "flow", "shelldeck", "psalm", "mocho", "selah", "kudi", "kairos", "lumicare"] },
-  { eyebrow: "More apps", title: "Smaller builds and experiments", slugs: ["ayo-arena", "beatpd", "howmarket", "ajo", "cribnest", "dogwalk", "watch-face", "pawfit", "hagah", "scribe"] },
+  { eyebrow: "High impact", title: "Health, safety and culture", slugs: ["aidnow", "ankara-blocks", "lumicare", "periodica"] },
+  { eyebrow: "Best work", title: "Polished, tested and ready to use", slugs: ["flow", "shelldeck", "psalm", "selah", "mocho", "kudi", "scribe"] },
+  { eyebrow: "More apps", title: "Smaller builds and experiments", slugs: ["ayo-arena", "beatpd", "howmarket", "ajo", "cribnest", "dogwalk", "watch-face", "pawfit"] },
 ];
 
 const rankOrder = [...spotlightSlugs, ...sections.flatMap((s) => s.slugs)];
