@@ -8,7 +8,7 @@ import { featuredProjects } from "@/data/projects";
 import { ProjectMockup } from "@/components/projects/project-mockup";
 import { cn } from "@/lib/utils";
 
-/** Auto-advancing featured project card (Hagah, Kairos, CribDoc, AidNow, Ankara Blocks). */
+/** Auto-advancing featured project card (LumiCare, CribDoc, Hagah, Kairos). */
 export function FeaturedCarousel() {
   const reduce = useReducedMotion();
   const [i, setI] = useState(0);

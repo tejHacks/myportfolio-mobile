@@ -11,12 +11,15 @@ import { cn } from "@/lib/utils";
 type FilterId = (typeof filters)[number]["id"];
 
 /** Grid that shuffles in on load and re-flows with layout animations. */
-function Grid({ list, allowLarge = false }: { list: Project[]; allowLarge?: boolean }) {
+function Grid({ list, allowLarge = false, cols = 3 }: { list: Project[]; allowLarge?: boolean; cols?: 2 | 3 }) {
+  // In a 3-column grid, a list that would leave one or two cards stranded on the
+  // last row starts with a double-width card instead, so every row is full.
+  const widenFirst = allowLarge && cols === 3 && list.length % 3 === 2;
   return (
-    <motion.div layout className="grid grid-flow-dense gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <motion.div layout className={cn("grid grid-flow-dense gap-5 sm:grid-cols-2", cols === 3 && "lg:grid-cols-3")}>
       <AnimatePresence mode="popLayout">
         {list.map((p, i) => {
-          const large = allowLarge && p.size === "large";
+          const large = (allowLarge && p.size === "large") || (widenFirst && i === 0);
           return (
             <motion.div
               key={p.slug}
@@ -57,9 +60,9 @@ function Section({ eyebrow, title, children }: { eyebrow: string; title: string;
 }
 
 /**
- * Animated category tabs. "All" is curated for skimmers: live apps with real
- * users first, then React Native products, then Swift and Flutter, then smaller
- * builds as compact tiles, with older work folded.
+ * Animated category tabs. "All" is curated for skimmers: four featured
+ * projects, then best work, then products worth growing, with earlier work
+ * folded at the end.
  */
 export function ProjectsExplorer() {
   const [active, setActive] = useState<FilterId>("all");
@@ -110,12 +113,12 @@ export function ProjectsExplorer() {
       ) : (
         <>
           <Section eyebrow="Featured" title="Start here">
-            <Grid list={spotlight} />
+            <Grid list={spotlight} cols={2} />
           </Section>
 
           {sections.map((s) => (
             <Section key={s.eyebrow} eyebrow={s.eyebrow} title={s.title}>
-              {s.compact ? <CompactGrid list={bySlug(s.slugs)} /> : <Grid list={bySlug(s.slugs)} />}
+              {s.compact ? <CompactGrid list={bySlug(s.slugs)} /> : <Grid list={bySlug(s.slugs)} allowLarge />}
             </Section>
           ))}
 

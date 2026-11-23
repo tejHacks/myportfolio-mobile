@@ -110,7 +110,6 @@ export const projects: Project[] = [
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/cribdoc-v1.0.0/CribDoc-1.0.0.apk", github: "https://github.com/tejHacks/cribdoc-mobile" },
     featured: true,
-    size: "large",
     competitions: [{ name: "USPF Changemaker" }, { name: "GenHacks (Devpost)" }],
   },
   {
@@ -288,6 +287,7 @@ export const projects: Project[] = [
       "/projects/ayo-arena/screen-4-how-to-play.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/ayo-arena-v1.0.0/AyoArena-1.0.0.apk", github: "https://github.com/tejHacks/ayo-arena-mobile" },
+    archived: true,
   },
 
   {
@@ -324,6 +324,7 @@ export const projects: Project[] = [
       "/projects/periodica/screen-6-onboarding.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/periodica-v1.0.0/Periodica-1.0.0.apk", github: "https://github.com/tejHacks/periodica" },
+    archived: true,
   },
   {
     slug: "shelldeck",
@@ -401,6 +402,7 @@ export const projects: Project[] = [
       "/projects/swiftlab/screen-6-lesson-dark.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/swiftlab-v1.0.0/SwiftLab-1.0.0.apk", github: "https://github.com/tejHacks/swfit-lab" },
+    archived: true,
   },
   {
     slug: "kudi",
@@ -586,6 +588,7 @@ export const projects: Project[] = [
       "/projects/scribe/quiz.png",
     ],
     links: { github: "https://github.com/tejHacks/scribe-mobile-app" },
+    archived: true,
   },
   {
     slug: "algo-x",
@@ -818,6 +821,7 @@ export const projects: Project[] = [
       "/projects/beatpd/screen-4-intro-loop.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/beatpd-v1.0.0/Beatpd-1.0.0.apk", github: "https://github.com/tejHacks/beatproducer" },
+    archived: true,
   },
   {
     slug: "howmarket",
@@ -882,6 +886,7 @@ export const projects: Project[] = [
       "/projects/mocho/screen-4-onboarding.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/mocho-v1.0.0/Mocho-1.0.0.apk", github: "https://github.com/tejHacks/mocho-music-player" },
+    archived: true,
   },
   {
     slug: "ajo",
@@ -946,6 +951,7 @@ export const projects: Project[] = [
       "/projects/selah/screen-4-onboarding-reminders.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/selah-v1.0.0/Selah-1.0.0.apk", github: "https://github.com/tejHacks/selah" },
+    archived: true,
   },
   {
     slug: "cribnest",
@@ -983,6 +989,7 @@ export const projects: Project[] = [
       "/projects/cribnest/screen-7-kicks.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/cribnest-v1.0.0/CribNest-1.0.0.apk", github: "https://github.com/tejHacks/cribnest" },
+    archived: true,
   },
   {
     slug: "dogwalk",
@@ -1021,6 +1028,7 @@ export const projects: Project[] = [
       "/projects/dogwalk/screen-8-walker-today.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/dogwalk-v1.0.0/DogWalk-1.0.0.apk", github: "https://github.com/tejHacks/dogwalk" },
+    archived: true,
   },
   {
     slug: "watch-face",
@@ -1053,6 +1061,7 @@ export const projects: Project[] = [
       "/projects/watch-face/screen-4-onboarding.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/watch-face-v1.0.0/WatchFace-1.0.0.apk", github: "https://github.com/tejHacks/watch-face" },
+    archived: true,
   },
   {
     slug: "pawfit",
@@ -1085,6 +1094,7 @@ export const projects: Project[] = [
       "/projects/pawfit/screen-4-onboarding.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/pawfit-v1.0.0/PawFit-1.0.0.apk", github: "https://github.com/tejHacks/pawfit-mobile-app" },
+    archived: true,
   },
 ];
 
@@ -1093,18 +1103,17 @@ export const projects: Project[] = [
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 
 /** Home-page carousel. */
-export const featuredProjects = ["hagah", "kairos", "cribdoc", "aidnow", "ankara-blocks"]
+export const featuredProjects = ["lumicare", "cribdoc", "hagah", "kairos"]
   .map((slug) => getProject(slug))
   .filter((p): p is Project => Boolean(p));
 
-/** Top of the Projects page: the strongest three. */
-export const spotlightSlugs = ["hagah", "kairos", "cribdoc"];
+/** Top of the Projects page: the four featured projects. */
+export const spotlightSlugs = ["lumicare", "cribdoc", "hagah", "kairos"];
 
-/** How the "All" view is grouped, after the spotlight: best work first, smaller builds after. Archived work is folded at the end. */
+/** How the "All" view is grouped after the featured four. Archived work is folded at the end. */
 export const sections: { eyebrow: string; title: string; slugs: string[]; compact?: boolean }[] = [
-  { eyebrow: "React Native", title: "Products that solve real problems", slugs: ["aidnow", "lumicare", "ankara-blocks", "periodica", "flow", "shelldeck"] },
-  { eyebrow: "Beyond React Native", title: "Native iOS and Flutter", slugs: ["psalm", "swiftlab", "selah", "mocho", "kudi", "ajo"] },
-  { eyebrow: "More builds", title: "Smaller apps and experiments", compact: true, slugs: ["scribe", "dogwalk", "howmarket", "cribnest", "ayo-arena", "beatpd", "pawfit", "watch-face"] },
+  { eyebrow: "Best work", title: "Polished, tested and ready to use", slugs: ["flow", "aidnow", "shelldeck", "psalm", "kudi"] },
+  { eyebrow: "Worth growing", title: "Products with room to grow", slugs: ["howmarket", "ajo", "ankara-blocks"] },
 ];
 
 const rankOrder = [...spotlightSlugs, ...sections.flatMap((s) => s.slugs)];
@@ -1114,12 +1123,14 @@ const rank = (p: Project) => {
 };
 
 export function filterProjects(filter: (typeof filters)[number]["id"]) {
+  // Counts and lists cover the visible work only; earlier work stays folded on the All view.
+  const visible = projects.filter((p) => !p.archived);
   const list =
     filter === "all"
-      ? projects
+      ? visible
       : filter === "react-native"
-        ? projects.filter((p) => !p.archived && p.tech.some((t) => /react native/i.test(t)))
-        : projects.filter((p) => p.categories.includes(filter));
+        ? visible.filter((p) => p.tech.some((t) => /react native/i.test(t)))
+        : visible.filter((p) => p.categories.includes(filter));
   return [...list].sort((x, y) => rank(x) - rank(y));
 }
 
