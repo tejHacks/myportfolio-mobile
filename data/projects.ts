@@ -147,7 +147,7 @@ export const projects: Project[] = [
       "/projects/lumicare/screen-6-referrals.png",
     ],
     links: { github: "https://github.com/tejHacks/lumicare-mobile" },
-    competitions: [{ name: "Winner, MTN Pachipanda Challenge" }, { name: "Rice360" }, { name: "Optica" }],
+    competitions: [{ name: "1st place, MTN PachiPanda Challenge 3.0" }, { name: "Rice360 Innovation Challenge Award" }, { name: "Optica Amplify Award" }],
     origins:
       "LumiCare is an engineering-evaluation prototype. It is not a medical device, and its model is not clinically validated.",
   },
