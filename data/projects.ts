@@ -118,7 +118,7 @@ export const projects: Project[] = [
     eyebrow: "Mobile · Edge AI · Newborn Care",
     tagline: "Newborn care that works offline: spot jaundice early, keep records, follow up.",
     overview:
-      "LumiCare is a mobile prototype for caregivers and community health workers. It brings newborn jaundice education, a guided eye-photo workflow, on-device records, care contacts, and follow-up reminders together in one app. Its aim is to make the next step easier to understand and keep important care information available when connectivity is limited. Built with Favour Oni for the MTN Pachipanda Challenge, and it won. I developed the mobile app.",
+      "LumiCare is a mobile prototype for caregivers and community health workers. It brings newborn jaundice education, a guided eye-photo workflow, on-device records, care contacts, and follow-up reminders together in one app. Its aim is to make the next step easier to understand and keep important care information available when connectivity is limited. Built with Favour Oni for the MTN PachiPanda Challenge, and it won. I developed the mobile app.",
     problem:
       "Caregivers and community health workers often work where connectivity is limited, yet newborn concerns like jaundice need clear guidance, good records, and timely follow-up with a qualified professional.",
     solution:

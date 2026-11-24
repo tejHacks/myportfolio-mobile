@@ -16,14 +16,14 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     company: "LumiCare",
-    type: "MTN Pachipanda Challenge · Winner",
+    type: "MTN PachiPanda Challenge 3.0 · 1st place",
     role: "Mobile Developer",
     period: "2026",
     location: "Nigeria",
     description:
-      "Built LumiCare with Favour Oni — an offline-first newborn care app for caregivers and community health workers — for the MTN Pachipanda Challenge, and won. I developed the mobile app: the Expo app, the guided eye-photo workflow, on-device records, and integrating the ONNX model so every scan runs on the phone.",
+      "Built LumiCare with Favour Oni — an offline-first newborn care app for caregivers and community health workers — for the MTN PachiPanda Challenge, and won. I developed the mobile app: the Expo app, the guided eye-photo workflow, on-device records, and integrating the ONNX model so every scan runs on the phone.",
     highlights: [
-      "Winner, MTN Pachipanda Challenge",
+      "1st place, MTN PachiPanda Challenge 3.0 (₦5 million team prize)",
       "On-device ONNX Runtime inference (YOLOv8 sclera segmentation)",
       "Offline-first records, PDF exports and follow-up reminders",
       "Language selector with 20 options, including Yoruba, Igbo and Hausa",
