@@ -893,22 +893,24 @@ export const projects: Project[] = [
   {
     slug: "ajo",
     name: "Ajo",
-    eyebrow: "Flutter · Fintech · Community savings",
+    eyebrow: "Flutter · Laravel · Fintech",
     tagline: "Run your ajo without the notebook.",
     overview:
-      "Ajo keeps rotating savings groups (ajo / esusu) honest and simple. Set the contribution, the frequency and the payout order, and Ajo shows whose turn it is to collect, how much is in the pot, who has paid and who is still owing, with a ledger you can share to the group chat.",
+      "Ajo keeps rotating savings groups (ajo / esusu) honest and simple. Set the contribution, the frequency and the payout order, and Ajo shows whose turn it is to collect, how much is in the pot, who has paid and who still owes, with a ledger you can share to the group chat. It works fully offline, and signing in backs every group up to a Laravel API so it follows you to another phone.",
     problem:
-      "Millions of people save through ajo, but most groups still run on a notebook and memory. Disputes start when nobody is sure who paid, or whose turn it is.",
+      "Millions of people save through ajo, but most groups still run on a notebook and memory. Disputes start when nobody is sure who paid, or whose turn it is, and a lost phone means a lost ledger.",
     solution:
-      "An offline-first tracker: weekly or monthly cycles, drag-to-reorder payout order, per-cycle payment checklists, pot progress, a full schedule, and a shareable ledger.",
+      "A Flutter app that saves on the phone first, with a Laravel 13 API behind it (Sanctum tokens, groups, members in payout order, contributions, payouts and a computed schedule). Changes made offline wait in a queue that survives restarts; when the phone is back online, each group syncs with last-write-wins on updatedAt, and the API answers 409 with its copy when it already has a newer one. Users only ever see their own groups. 27 app tests, 20 API tests, and an end-to-end test that runs the real app on a simulator against the live API.",
     features: [
       "Weekly or monthly groups with a clear payout order",
       "Whose turn it is, the pot, and who still owes",
       "Tick off payments and mark each pot as collected",
       "Full schedule of every collection date",
       "Share the ledger to WhatsApp in one tap",
+      "Optional sign-in: backup and sync to a Laravel API, with an offline queue",
+      "Laravel 13 API with Sanctum auth, 20 feature tests",
     ],
-    tech: ["Flutter", "Dart", "shared_preferences", "intl"],
+    tech: ["Flutter", "Dart", "Laravel", "Sanctum", "SQLite", "REST API", "shared_preferences"],
     categories: ["mobile"],
     status: "in-development",
     icon: "/projects/ajo/icon.svg",
@@ -917,6 +919,8 @@ export const projects: Project[] = [
     screenshots: [
       "/projects/ajo/screen-1-groups.png",
       "/projects/ajo/screen-2-group.png",
+      "/projects/ajo/screen-5-account-sync.png",
+      "/projects/ajo/screen-6-sign-in.png",
       "/projects/ajo/screen-3-new-group.png",
       "/projects/ajo/screen-4-onboarding.png",
     ],
