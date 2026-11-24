@@ -116,15 +116,15 @@ export const projects: Project[] = [
     slug: "lumicare",
     name: "LumiCare",
     eyebrow: "Mobile · Edge AI · Newborn Care",
-    tagline: "Offline-first newborn care support for noticing concerns, keeping records, and following up.",
+    tagline: "Newborn care that works offline: spot jaundice early, keep records, follow up.",
     overview:
-      "LumiCare is a mobile prototype for caregivers and community health workers. It brings newborn jaundice education, a guided eye-photo workflow, on-device records, care contacts, and follow-up reminders together in one app. Its aim is to make the next step easier to understand and keep important care information available when connectivity is limited. Built with Favour Oni for the MTN Pachipanda Challenge — and won. I developed the mobile app.",
+      "LumiCare is a mobile prototype for caregivers and community health workers. It brings newborn jaundice education, a guided eye-photo workflow, on-device records, care contacts, and follow-up reminders together in one app. Its aim is to make the next step easier to understand and keep important care information available when connectivity is limited. Built with Favour Oni for the MTN Pachipanda Challenge, and it won. I developed the mobile app.",
     problem:
       "Caregivers and community health workers often work where connectivity is limited, yet newborn concerns like jaundice need clear guidance, good records, and timely follow-up with a qualified professional.",
     solution:
       "My part: the whole mobile app. An Expo / React Native app where every scan runs a bundled ONNX model on-device: a YOLOv8 segmentation model finds the sclera, a yellow-pixel index is computed from the mask, and a ported linear classifier maps it to an evaluation-only display state. Records live in an encrypted on-device SQLite database, with PDF exports, referral sharing, and follow-up reminders.",
     features: [
-      "Guided eye-photo workflow — camera or gallery",
+      "Guided eye-photo workflow from the camera or gallery",
       "On-device ONNX Runtime inference (YOLOv8 sclera segmentation)",
       "Offline-first records with SQLCipher-configured SQLite",
       "PDF export and referral sharing",
@@ -147,9 +147,9 @@ export const projects: Project[] = [
       "/projects/lumicare/screen-6-referrals.png",
     ],
     links: { github: "https://github.com/tejHacks/lumicare-mobile" },
-    competitions: [{ name: "MTN Pachipanda Challenge — Winner" }, { name: "Rice360" }, { name: "Optica" }],
+    competitions: [{ name: "Winner, MTN Pachipanda Challenge" }, { name: "Rice360" }, { name: "Optica" }],
     origins:
-      "LumiCare is an engineering-evaluation prototype — not a medical device, and its model is not clinically validated.",
+      "LumiCare is an engineering-evaluation prototype. It is not a medical device, and its model is not clinically validated.",
   },
   {
     slug: "aidnow",
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     eyebrow: "Mobile · Health · Emergency First Aid",
     tagline: "Know what to do in an emergency, wherever you are.",
     overview:
-      "AidNow is an offline-first first-aid companion for the moments when someone collapses, seizes, chokes or bleeds and you need to act. It gives calm, step-by-step guidance for common emergencies — epilepsy and seizures, fainting, choking, CPR, severe bleeding, burns, allergic reactions, asthma attacks, stroke, heat stroke, low blood sugar and more — with one tap to call the right emergency number for the country you're in. Not medical advice: AidNow gives general first-aid guidance, is not a substitute for professional care, and its content is awaiting clinician review. In an emergency, always call your local emergency number first.",
+      "AidNow is an offline-first first-aid companion for the moments when someone collapses, seizes, chokes or bleeds and you need to act. It gives calm, step-by-step guidance for common emergencies (epilepsy and seizures, fainting, choking, CPR, severe bleeding, burns, allergic reactions, asthma attacks, stroke, heat stroke, low blood sugar and more), with one tap to call the right emergency number for the country you're in. Not medical advice: AidNow gives general first-aid guidance, is not a substitute for professional care, and its content is awaiting clinician review. In an emergency, always call your local emergency number first.",
     problem:
       "In an emergency most people freeze. First-aid knowledge is scattered, rarely remembered, and often unavailable when there's no signal. Seconds matter, and the right first steps can make a real difference.",
     solution:
@@ -482,7 +482,7 @@ export const projects: Project[] = [
     name: "Kairos",
     eyebrow: "Faith · Prayer · Spiritual Discipline",
     tagline:
-      "A prayer companion built to help believers turn good intentions into consistent spiritual practice.",
+      "Reminds you to pray, every day, at the hours you choose.",
     overview:
       "Kairos (Greek for \"the appointed time\") reminds you to pray and helps you keep a rhythm of prayer, fasting and Scripture. Set your prayer hours and Kairos reminds you each day with a verse on prayer. It also has a timed prayer altar, seven kinds of fast, a prayer journal and daily KJV verses and psalms. Used by 100+ people.",
     problem:
@@ -523,7 +523,7 @@ export const projects: Project[] = [
     name: "Hagah",
     eyebrow: "Faith · Declarations · Word Study",
     tagline:
-      "A Scripture declaration and meditation app built around speaking, studying, and remembering God's Word.",
+      "Meditate on the Word, declare it, and hear it read aloud.",
     overview:
       "Hagah (Hebrew for \"to meditate\", Joshua 1:8) helps you keep the Word in your mouth day and night. Each day brings a scripture and a declaration that Hagah reads aloud. The full King James Bible has Strong's word study and a Listen button that reads any chapter to you. Declare the Word offers 63 first-person KJV verses to speak as written, and a daily streak keeps the habit going. Live on Google Play.",
     problem:
@@ -831,7 +831,7 @@ export const projects: Project[] = [
     eyebrow: "Mobile · Marketplace data · Community",
     tagline: "How much is it at the market today?",
     overview:
-      "HowMarket crowdsources real food prices from local markets — rice, garri, tomatoes, palm oil — so you know what things cost before you leave the house. Sign in, pick your area, see today's price at every market near you, and add the prices you see. Version one covers Ibadan, Lagos and Abuja markets, built to scale city by city.",
+      "HowMarket crowdsources real food prices from local markets (rice, garri, tomatoes, palm oil), so you know what things cost before you leave the house. Sign in, pick your area, see today's price at every market near you, and add the prices you see. Version one covers Ibadan, Lagos and Abuja markets, built to scale city by city.",
     problem:
       "Market prices change week to week and differ between markets a few kilometres apart. Most people only find out at the stall, and crowdsourced price apps fail when anyone can post anything.",
     solution:
@@ -896,7 +896,7 @@ export const projects: Project[] = [
     eyebrow: "Flutter · Fintech · Community savings",
     tagline: "Run your ajo without the notebook.",
     overview:
-      "Ajo keeps rotating savings groups (ajo / esusu) honest and simple. Set the contribution, the frequency and the payout order, and Ajo shows whose turn it is to collect, how much is in the pot, who has paid and who is still owing — with a ledger you can share to the group chat.",
+      "Ajo keeps rotating savings groups (ajo / esusu) honest and simple. Set the contribution, the frequency and the payout order, and Ajo shows whose turn it is to collect, how much is in the pot, who has paid and who is still owing, with a ledger you can share to the group chat.",
     problem:
       "Millions of people save through ajo, but most groups still run on a notebook and memory. Disputes start when nobody is sure who paid, or whose turn it is.",
     solution:
