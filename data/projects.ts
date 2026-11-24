@@ -828,22 +828,23 @@ export const projects: Project[] = [
   {
     slug: "howmarket",
     name: "HowMarket",
-    eyebrow: "Mobile · Marketplace data · Community",
+    eyebrow: "React Native · Laravel · Community data",
     tagline: "How much is it at the market today?",
     overview:
       "HowMarket crowdsources real food prices from local markets (rice, garri, tomatoes, palm oil), so you know what things cost before you leave the house. Sign in, pick your area, see today's price at every market near you, and add the prices you see. Version one covers Ibadan, Lagos and Abuja markets, built to scale city by city.",
     problem:
       "Market prices change week to week and differ between markets a few kilometres apart. Most people only find out at the stall, and crowdsourced price apps fail when anyone can post anything.",
     solution:
-      "A consensus engine instead of a free-for-all: recent reports only, robust outlier removal, a recency- and trust-weighted median, confidence levels that need several different people to agree, neighbour confirmations and flags, reporter trust scores, and server-side rules (row-level security, one vote per person, daily report limits).",
+      "A consensus engine instead of a free-for-all: recent reports only, robust outlier removal, a recency- and trust-weighted median, confidence levels that need several different people to agree, neighbour confirmations and flags, reporter trust scores, and a Laravel API that enforces the rules: one vote per person, no voting on your own report, 20 reports a day, and trust scores only the server can change. Other reporters show up only as anonymous ids.",
     features: [
       "Consensus prices that one wrong report can't move",
       "\"Verified\" only when 3+ people agree within 3 days",
       "Add today's price in seconds; confirm or flag others",
       "Per-market and area-wide prices with ranges",
-      "Supabase email sign-in and row-level security",
+      "Email accounts on a Laravel API; the sign-in token is kept in the phone's secure storage",
+      "Demo mode with sample prices, no account needed",
     ],
-    tech: ["React Native", "Expo SDK 58", "TypeScript", "Supabase", "PostgreSQL"],
+    tech: ["React Native", "Expo SDK 58", "TypeScript", "Laravel", "Sanctum", "REST API", "expo-secure-store"],
     categories: ["mobile"],
     status: "in-development",
     icon: "/projects/howmarket/icon.svg",
@@ -854,6 +855,7 @@ export const projects: Project[] = [
       "/projects/howmarket/screen-2-item.png",
       "/projects/howmarket/screen-3-add-price.png",
       "/projects/howmarket/screen-4-login.png",
+      "/projects/howmarket/screen-5-profile.png",
     ],
     links: { apk: "https://github.com/tejHacks/apps/releases/download/howmarket-v1.0.0/HowMarket-1.0.0.apk", github: "https://github.com/tejHacks/howmarket-mobile" },
   },
