@@ -5,86 +5,130 @@
 <title>Olateju Olamide Emmanuel — Resume</title>
 <!-- Source for public/resume.pdf. Regenerate with: node resume/build.mjs -->
 <style>
-  @page { size: A4; margin: 15mm 16mm 14mm; }
+  @page { size: A4; margin: 14mm 17mm 13mm; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: "Helvetica Neue", Arial, sans-serif; color: #1a1f2b; font-size: 9.6pt; line-height: 1.42; }
-  a { color: #1d4ed8; text-decoration: none; }
-  h1 { font-size: 23pt; letter-spacing: -0.4pt; margin: 0; }
-  .title { color: #1d4ed8; font-weight: 600; font-size: 10.5pt; margin-top: 2pt; }
-  .contact { color: #4b5563; margin-top: 5pt; font-size: 8.4pt; display: flex; flex-wrap: wrap; row-gap: 2pt; }
+  :root { --ink: #16181d; --body: #33373f; --muted: #6b7079; --line: #e3e5e9; --accent: #1e4fd6; }
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: var(--body);
+    font-size: 9.4pt;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  p, li { text-wrap: pretty; orphans: 3; widows: 3; hyphens: none; }
+  a { color: var(--accent); text-decoration: none; }
+  b, strong { color: var(--ink); font-weight: 600; }
+
+  /* Header */
+  header { margin-bottom: 12pt; }
+  h1 { font-size: 22pt; font-weight: 600; letter-spacing: -0.3pt; color: var(--ink); margin: 0; line-height: 1.1; }
+  .title { font-size: 10.5pt; color: var(--accent); margin-top: 3pt; font-weight: 500; }
+  .contact { margin-top: 6pt; font-size: 8.4pt; color: var(--muted); display: flex; flex-wrap: wrap; row-gap: 2pt; }
   .contact span { white-space: nowrap; }
-  .contact span + span::before { content: "·"; margin: 0 5pt; color: #9ca3af; }
-  h2 { font-size: 9.2pt; letter-spacing: 1.4pt; text-transform: uppercase; color: #1d4ed8; border-bottom: 1.2pt solid #1d4ed8; padding-bottom: 2pt; margin: 13pt 0 6pt; }
-  h2 { break-after: avoid; }
-  .new-page { break-before: page; }
+  .contact.links { margin-top: 2pt; }
+  .contact span + span::before { content: "·"; margin: 0 6pt; color: #b5b9c0; }
+
+  /* Sections */
+  h2 {
+    font-size: 8.2pt; font-weight: 600; letter-spacing: 1.6pt; text-transform: uppercase; color: var(--muted);
+    margin: 14pt 0 6pt; padding-bottom: 3pt; border-bottom: 0.75pt solid var(--line);
+    break-after: avoid;
+  }
   p { margin: 0; }
-  .skills { display: grid; grid-template-columns: 92pt 1fr; gap: 2pt 10pt; }
-  .skills b { color: #111827; }
-  .item { margin-bottom: 7pt; page-break-inside: avoid; }
-  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10pt; }
-  .role { font-weight: 700; color: #111827; }
-  .org { color: #374151; }
-  .when { color: #6b7280; font-size: 8.8pt; white-space: nowrap; }
-  ul { margin: 2pt 0 0; padding-left: 13pt; }
-  li { margin: 1pt 0; }
-  .stack { color: #1d4ed8; font-size: 8.6pt; font-style: italic; }
-  .proj { margin-bottom: 5.5pt; page-break-inside: avoid; }
-  .proj .name { font-weight: 700; color: #111827; }
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16pt; }
+  ul { margin: 2.5pt 0 0; padding-left: 11pt; }
+  li { margin: 1.2pt 0; padding-left: 1pt; }
+  li::marker { color: #a3a8b0; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: 78pt 1fr; gap: 2.5pt 12pt; }
+  .skills dt { color: var(--ink); font-weight: 600; }
+  .skills dd { margin: 0; }
+
+  /* Experience */
+  .item { margin-bottom: 8pt; break-inside: avoid; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .role { color: var(--ink); font-weight: 600; }
+  .org { color: var(--body); }
+  .when { color: var(--muted); font-size: 8.6pt; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+
+  /* Projects */
+  .proj { margin-bottom: 7.5pt; break-inside: avoid; }
+  .proj .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .proj .name { color: var(--ink); font-weight: 600; font-size: 9.8pt; }
+  .proj .tag { color: var(--accent); font-size: 8.4pt; font-weight: 500; margin-left: 5pt; }
+  .proj .links { font-size: 8.4pt; white-space: nowrap; }
+  .proj .links a + a::before { content: "·"; margin: 0 5pt; color: #b5b9c0; }
+  .stack { color: var(--muted); font-size: 8.4pt; margin-top: 1pt; }
+  .proj p { margin-top: 2pt; }
+  .also { margin-top: 3pt; }
+
+  .page-break { break-before: page; }
 </style>
 </head>
 <body>
-  <h1>Olateju Olamide Emmanuel</h1>
-  <div class="title">Mobile Engineer · React Native, Expo &amp; Flutter · On-device ML</div>
-  <div class="contact">
-    <span>Ibadan, Nigeria</span><span>+234 808 697 6247</span><span><a href="mailto:olateju202@gmail.com">olateju202@gmail.com</a></span><span><a href="https://tejusportfolio.vercel.app">tejusportfolio.vercel.app</a></span><span><a href="https://github.com/tejHacks">github.com/tejHacks</a></span><span><a href="https://www.linkedin.com/in/olateju-olamide-22314a292/">LinkedIn</a></span>
-  </div>
+  <header>
+    <h1>Olateju Olamide Emmanuel</h1>
+    <div class="title">Mobile Engineer · React Native &amp; Expo · On-device ML</div>
+    <div class="contact">
+      <span>Ibadan, Nigeria · open to remote</span>
+      <span>+234 808 697 6247</span>
+      <span><a href="mailto:olateju202@gmail.com">olateju202@gmail.com</a></span>
+    </div>
+    <div class="contact links">
+      <span><a href="https://tejusportfolio.vercel.app">tejusportfolio.vercel.app</a></span>
+      <span><a href="https://github.com/tejHacks">github.com/tejHacks</a></span>
+      <span><a href="https://www.linkedin.com/in/olateju-olamide-22314a292/">linkedin.com/in/olateju-olamide</a></span>
+    </div>
+  </header>
 
   <h2>Summary</h2>
   <p>
-    Mobile engineer who takes apps from idea to a tested, installable build on my own. I've built 20+ apps across health, fintech,
-    faith, education and games, in React Native/Expo, Flutter and SwiftUI. I specialise in offline-first products for Nigerian
-    users and in running ML models on the phone with ONNX Runtime. I won the MTN Pachipanda Challenge with LumiCare, where I built
-    the mobile app. I write tests as I go (Jest, flutter_test, XCTest) and ship Android and iOS builds with EAS and Xcode.
+    Mobile engineer who takes apps from idea to a tested build in users’ hands. I work mainly in React Native and Expo,
+    with Flutter and SwiftUI when a project needs them. My apps are offline-first, built for Nigerian users, and some run
+    ML models on the phone with ONNX Runtime. Hagah is live on Google Play with 120+ downloads, and LumiCare won the
+    MTN Pachipanda Challenge. I write tests as I build and ship Android and iOS builds with EAS and Xcode.
   </p>
 
   <h2>Skills</h2>
-  <div class="skills">
-    <b>Mobile</b><span>React Native, Expo (SDK 58, Router, EAS Build), Flutter/Dart, SwiftUI &amp; WidgetKit, Reanimated, Gesture Handler, notifications, offline storage (SQLite, AsyncStorage)</span>
-    <b>On-device ML</b><span>ONNX Runtime (React Native), YOLOv8 segmentation, TensorFlow/Keras, PyTorch, scikit-learn, OpenCV</span>
-    <b>Backend</b><span>Node.js, Laravel (Sanctum), FastAPI, Flask, Supabase (Postgres, RLS), Firebase, REST API design</span>
-    <b>Quality &amp; delivery</b><span>Jest, React Native Testing Library, flutter_test, XCTest, TypeScript strict, ESLint, Git/GitHub, EAS, Xcode, Gradle</span>
-    <b>Languages</b><span>TypeScript, JavaScript, Dart, Swift, Python, PHP</span>
-  </div>
+  <dl class="skills">
+    <dt>Mobile</dt><dd>React Native, Expo (SDK 58, Router, EAS Build), TypeScript, Reanimated, Gesture Handler, notifications, SQLite, AsyncStorage · Flutter/Dart · SwiftUI &amp; WidgetKit</dd>
+    <dt>On-device ML</dt><dd>ONNX Runtime for React Native, YOLOv8 segmentation, TensorFlow/Keras, PyTorch, OpenCV</dd>
+    <dt>Backend</dt><dd>Laravel (Sanctum), Node.js, FastAPI, Supabase (Postgres, RLS), Firebase, REST APIs</dd>
+    <dt>Quality</dt><dd>Jest, React Native Testing Library, flutter_test, XCTest, ESLint, accessibility (WCAG AA contrast)</dd>
+    <dt>Tools</dt><dd>Git and GitHub, EAS, Xcode, Android Studio and Gradle, Firebase Crashlytics, Linux</dd>
+  </dl>
 
   <h2>Experience</h2>
   <div class="item">
-    <div class="row"><div><span class="role">Software Engineer</span> · <span class="org">CSMTech (NYSC place of primary assignment)</span></div><span class="when">Apr 2026 – Present</span></div>
+    <div class="row"><div><span class="role">Software Engineer</span> · <span class="org">CSMTech (NYSC primary assignment)</span></div><span class="when">Apr 2026 – Present</span></div>
     <ul>
-      <li>Built a repair-marketplace mobile app end to end, designing and shipping 50+ screens across the customer and technician journeys.</li>
-      <li>Work across design, debugging, testing and deployment on production systems with the wider engineering team.</li>
+      <li>Built a repair-marketplace mobile app end to end: 50+ screens across the customer and technician journeys.</li>
+      <li>Work on design, debugging, testing and deployment of production systems with the engineering team.</li>
     </ul>
   </div>
   <div class="item">
     <div class="row"><div><span class="role">Mobile Developer</span> · <span class="org">Kairos Initiative</span></div><span class="when">Oct 2025 – Aug 2026</span></div>
     <ul>
-      <li>Architected Kairos, a Christian prayer companion (React Native, Expo, TypeScript): prayer journal, Scripture and scheduled reminders, offline-first.</li>
-      <li>Built local notifications and background scheduling around daily prayer watches; onboarded 50+ early users in testing.</li>
+      <li>Architected Kairos, a prayer companion in React Native, Expo and TypeScript, with an offline-first journal, Scripture and reminders.</li>
+      <li>Built daily prayer reminders on Android notification channels and onboarded 50+ early users.</li>
     </ul>
   </div>
   <div class="item">
     <div class="row"><div><span class="role">Frontend &amp; Mobile Developer</span> · <span class="org">MamaCare (startup)</span></div><span class="when">Mar 2025 – Present</span></div>
-    <ul><li>Building a pregnancy and postpartum companion with React Native, Expo and Firebase: fetal development tracking, reminders, BMI and weekly guidance.</li></ul>
-  </div>
-  <div class="item">
-    <div class="row"><div><span class="role">Mobile Developer Intern</span> · <span class="org">HNG Internship</span></div><span class="when">Oct 2025 – Dec 2025</span></div>
-    <ul><li>Shipped a Bible quiz game, a crypto wallet prototype and a wallpaper app in remote, agile teams with code review.</li></ul>
+    <ul><li>Building a pregnancy and postpartum companion in React Native, Expo and Firebase: fetal development tracking, reminders and weekly guidance.</li></ul>
   </div>
   <div class="item">
     <div class="row"><div><span class="role">Frontend &amp; Mobile Developer</span> · <span class="org">Exodox</span></div><span class="when">Jun 2025 – Mar 2026</span></div>
-    <ul><li>Built React and React Native interfaces across several products; reusable components and performance work.</li></ul>
+    <ul><li>Built React and React Native interfaces across several products, with reusable components and performance work.</li></ul>
   </div>
-  <div class="two">
+  <div class="item">
+    <div class="row"><div><span class="role">Mobile Developer Intern</span> · <span class="org">HNG Internship</span></div><span class="when">Oct 2025 – Dec 2025</span></div>
+    <ul><li>Shipped a Bible quiz game, a crypto wallet prototype and a wallpaper app in remote agile teams with code review.</li></ul>
+  </div>
+  <div class="pair">
     <div class="item">
       <div class="row"><span class="role">Programming Instructor</span><span class="when">Jun – Oct 2024</span></div>
       <div class="org">Midas-Tech Training Institute</div>
@@ -93,33 +137,74 @@
     <div class="item">
       <div class="row"><span class="role">Community Lead</span><span class="when">Feb – Dec 2024</span></div>
       <div class="org">ATC Africa (remote)</div>
-      <ul><li>Ran workshops, code-alongs and mentoring for 50+ beginner developers.</li></ul>
+      <ul><li>Ran workshops, code-alongs and mentoring for 50+ new developers.</li></ul>
     </div>
   </div>
 
-  <h2 class="new-page">Selected projects</h2>
-  <div class="proj"><span class="name">CribDoc</span> <span class="stack">React Native · Expo · ONNX Runtime · YOLOv8 · 29 tests</span> · <a href="https://github.com/tejHacks/cribdoc-mobile">GitHub</a>
-    <p>Offline newborn-jaundice screening from an eye photo, run on the phone. Faster pipeline (native resize, background model load, box-limited masks), referrals tracked to completion, parent/health-worker/admin roles, PDF case reports. Model training in progress; no result is ever simulated.</p></div>
-  <div class="proj"><span class="name">LumiCare</span> <span class="stack">React Native · Expo · ONNX Runtime · SQLCipher</span> · <b>Winner, MTN Pachipanda Challenge</b> · <a href="https://github.com/tejHacks/lumicare-mobile">GitHub</a>
-    <p>Offline-first newborn care app built with Favour Oni. I built the mobile app: guided eye-photo flow, on-device ONNX inference, encrypted records, PDF export and reminders.</p></div>
-  <div class="proj"><span class="name">AidNow</span> <span class="stack">Expo · TypeScript · 41 tests</span> · <a href="https://github.com/tejHacks/aidnow-mobile">GitHub</a>
-    <p>Offline first-aid guide: 17 illustrated emergencies, one-tap emergency call by country, seizure timer and a CPR metronome.</p></div>
-  <div class="proj"><span class="name">HowMarket</span> <span class="stack">Expo · Supabase · Postgres RLS · 13 tests</span> · <a href="https://github.com/tejHacks/howmarket-mobile">GitHub</a>
-    <p>Crowdsourced market prices with a consensus engine (recency weighting, outlier removal, trust scores) so one bad report can't move a price.</p></div>
-  <div class="proj"><span class="name">DogWalk</span> <span class="stack">Expo · Laravel Sanctum API contract · 17 tests</span>
-    <p>Two-sided dog-walking marketplace: full auth for walkers and owners, ID-check step, booking lifecycle and earnings.</p></div>
-  <div class="proj"><span class="name">Ankara Blocks · Ayo Arena · Periodica</span> <span class="stack">Reanimated · minimax AI · 32 / 20 / 19 tests</span> · <a href="https://github.com/tejHacks/ankara-blocks-mobile">GitHub</a>
-    <p>Three games: an endless block puzzle with 50 levels and designs; Ayọ̀ (Oware) with an alpha-beta AI at three levels; and a periodic-table game with a “place it on the blank table” mode.</p></div>
-  <div class="proj"><span class="name">Kudi</span> <span class="stack">Flutter · Dart · 16 tests</span> &nbsp; <span class="name">Psalm</span> <span class="stack">SwiftUI · WidgetKit · XCTest</span>
-    <p>Kudi turns Nigerian bank SMS alerts into a categorised budget, entirely on the phone. Psalm is a native iOS daily-scripture app with Home and Lock Screen widgets.</p></div>
-  <div class="proj"><span class="name">Hagah · Kairos · Scribe</span> <span class="stack">React Native · Expo · Firebase · notifications</span>
-    <p>Faith apps for meditation, prayer reminders and sermon notes; 70+ and 50+ early users for Hagah and Kairos ahead of public release.</p></div>
-
   <h2>Education</h2>
   <div class="row"><div><span class="role">B.Sc. Computer Science</span> · <span class="org">Achievers University, Owo</span> · CGPA 4.13 / 5.00</div><span class="when">2021 – 2025</span></div>
-  <p>President, Computer Science Department · SRC Lead · Final-year research: breast cancer detection from ultrasound (TensorFlow, OpenCV).</p>
+  <p>President, Computer Science Department · SRC Lead · Final-year research: breast cancer detection from ultrasound images (TensorFlow, OpenCV).</p>
+
+  <h2 class="page-break">Selected projects</h2>
+
+  <div class="proj">
+    <div class="head"><div><span class="name">LumiCare</span><span class="tag">Winner, MTN Pachipanda Challenge</span></div><span class="links"><a href="https://github.com/tejHacks/lumicare-mobile">GitHub</a></span></div>
+    <div class="stack">React Native · Expo · ONNX Runtime · YOLOv8 · SQLCipher</div>
+    <p>Offline-first newborn care app, built with Favour Oni. I built the mobile app: a guided eye-photo flow, on-device ML inference, encrypted records, PDF export and follow-up reminders, in 20 languages including Yoruba, Igbo and Hausa.</p>
+  </div>
+
+  <div class="proj">
+    <div class="head"><div><span class="name">CribDoc</span><span class="tag">USPF Changemaker · GenHacks</span></div><span class="links"><a href="https://github.com/tejHacks/cribdoc-mobile">GitHub</a><a href="https://github.com/tejHacks/apps/releases/tag/cribdoc-v1.0.0">APK</a></span></div>
+    <div class="stack">React Native · Expo SDK 58 · ONNX Runtime · YOLOv8 · Jest</div>
+    <p>Newborn-jaundice screening from an eye photo, run entirely on the phone with no internet. Case records, referrals tracked from sent to completed, and roles for parents, health workers and admins on shared clinic phones.</p>
+  </div>
+
+  <div class="proj">
+    <div class="head"><div><span class="name">Hagah</span><span class="tag">Live on Google Play · 120+ downloads</span></div><span class="links"><a href="https://play.google.com/store/apps/details?id=com.olateju.hagahapp">Google Play</a><a href="https://github.com/tejHacks/hagahmobileapp">GitHub</a></span></div>
+    <div class="stack">React Native · Expo SDK 58 · SQLite · Text-to-Speech · Jest</div>
+    <p>Scripture meditation app with the full KJV Bible and Strong’s Hebrew and Greek word study on the phone. It reads chapters aloud verse by verse and keeps a daily streak. I repaired 3,465 truncated verses in its 31,000-verse database with a scripted fix.</p>
+  </div>
+
+  <div class="proj">
+    <div class="head"><div><span class="name">Kairos</span><span class="tag">50+ early users</span></div><span class="links"><a href="https://github.com/tejHacks/kairos-mobile-app">GitHub</a><a href="https://apkpure.com/p/com.olateju.kairos">APKPure</a></span></div>
+    <div class="stack">React Native · Expo SDK 58 · Notifications · Firebase Crashlytics · Jest</div>
+    <p>Prayer companion that reminds you to pray at the hours you choose, with timed prayer sessions, fasting plans and a journal with PDF export. Light and dark themes are tested for WCAG AA contrast.</p>
+  </div>
+
+  <div class="proj">
+    <div class="head"><div><span class="name">AidNow</span></div><span class="links"><a href="https://github.com/tejHacks/aidnow-mobile">GitHub</a><a href="https://github.com/tejHacks/apps/releases/tag/aidnow-v1.0.0">APK</a></span></div>
+    <div class="stack">React Native · Expo SDK 58 · TypeScript · 40+ Jest tests</div>
+    <p>Offline first-aid guide: 17 illustrated emergencies, one-tap emergency calls using each country’s number, a seizure timer and a CPR metronome with haptic beats.</p>
+  </div>
+
+  <div class="proj">
+    <div class="head"><div><span class="name">HowMarket</span></div><span class="links"><a href="https://github.com/tejHacks/howmarket-mobile">GitHub</a></span></div>
+    <div class="stack">React Native · Expo · Supabase · PostgreSQL row-level security</div>
+    <p>Crowdsourced market prices with a consensus engine (recency weighting, outlier removal, trust scores), so one wrong report can’t move a price.</p>
+  </div>
+
+  <div class="proj">
+    <div class="head"><div><span class="name">Flow</span></div><span class="links"><a href="https://github.com/tejHacks/flow">GitHub</a></span></div>
+    <div class="stack">React Native · Expo Router · Supabase · OpenAI API · RevenueCat</div>
+    <p>Brain-dump app: an LLM turns what’s on your mind into three clear actions, with a breathing timer and subscriptions.</p>
+  </div>
+
+  <div class="proj">
+    <div class="head"><div><span class="name">Ankara Blocks</span></div><span class="links"><a href="https://github.com/tejHacks/ankara-blocks-mobile">GitHub</a></span></div>
+    <div class="stack">React Native · Reanimated · Gesture Handler · 32 Jest tests</div>
+    <p>Endless block puzzle running at 60 fps with 50 levels of Ankara designs and a fair dealer that always gives you a piece that fits.</p>
+  </div>
+
+  <div class="proj">
+    <div class="head"><div><span class="name">Also built</span></div></div>
+    <p class="also"><b>ShellDeck</b> (React Native): offline Linux and shell reference, 476 commands, 0.07 ms search.
+      <b>Kudi</b> (Flutter): turns Nigerian bank SMS alerts into a budget, on the phone.
+      <b>Psalm</b> (SwiftUI, WidgetKit): daily psalm on the Home and Lock Screen.
+      <b>Ajo</b> (Flutter): rotating-savings groups without the notebook.
+      All on <a href="https://tejusportfolio.vercel.app/projects">tejusportfolio.vercel.app/projects</a>.</p>
+  </div>
 
   <h2>Additional</h2>
-  <p>English (fluent), Yoruba (native), French and Spanish (basic) · Interests: open source, Linux, writing on Medium, chess, poetry, faith and technology.</p>
+  <p>English (fluent), Yoruba (native), French and Spanish (basic) · Writing on Medium · Interests: open source, Linux, chess, poetry, faith and technology.</p>
 </body>
 </html>
